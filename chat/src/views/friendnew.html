@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750,target-densitydpi=340,user-scalable=no">
+    <title>添加好友</title>
+    <link rel="stylesheet" href="/home/css/public.css" />
+    <link rel="stylesheet" href="/home/css/group.css" />
+  </head>
+  <body id="body_bg">
+    <form method="post">
+      <div class="nav_data">
+          <div class="left" onclick="location.href='/user/index'">添加好友列表</div>
+          <div class="right"><button>发送</button></div>
+      </div>
+      <div class="swiper-slide news" style="width:750px;height:900px; overflow:auto">
+        <ul id="chatGroup">
+          {{#each(chatlist)}}
+          <li data-id="{{this.toid}}">
+              <a href="/user/groupChat?friend={{this.toid}}">
+                <div class="lf">
+                    {{#if(!this.avatar)}}
+                      <img src="/home/img/a1.png" />
+                    {{else}}
+                      <img src="{{this.avatar}}" />
+                    {{/if}}
+                    <h1>好友：{{this.username}}{{xindex}}</h1>
+                    <span data-value="{{this.content}}">附加信息：{{this.content}}</span>
+                  </div>
+                  <div class="rt">
+                    <span>添加日期：{{this.createtime}}</span>
+                  </div>
+              </a>
+              <button type="button" data-id="{{this.toids}}" id="refuse">拒绝</button>
+              <button type="button" data-id="{{this.toids}}" id="agree">同意</button>
+              <br>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </form>
+  </body>
+</html>
+<script src="/home/js/jquery-1.8.3.js"></script>
+<script>
+  //同意好友
+  $('#agree').click(function() {
+    console.log(32)
+    var id = this.dataset.id;
+    $.ajax({
+      url: `http://localhost:3000/user/friendAgree?toids=${id}`,
+      //实时更新是否同意
+      success: res => {
+        if(res == "1")
+        {
+          $(this).siblings("button").remove();
+          $(this).after("<strong>已同意</strong>");
+          $(this).remove();
+        }else{
+          alert("请添加分组");
+          window.location.href = "/user/groupAdd";
+        }
+      }
+    });
+  });
+  // 拒绝
+  $("#refuse").click(function() {
+    var id = this.dataset.id;
+    $.ajax({
+      url: `http://localhost:3000/user/friendRefuse?toids=${id}`,
+      success: res=> {
+        //实时更新是否拒绝
+        if(res == "1")
+        {
+          $(this).siblings("button").remove();
+          $(this).after("<strong>已拒绝</strong>");
+          $(this).remove();
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  #chatGroup {
+    margin-top: 15%;
+  }
+  #chatGroup li .lf img {
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    border: 4px #fff solid;
+    margin-top: 12px;
+    float: left;
+  }
+  #chatGroup li .lf h1 {
+    padding:20px 0;
+    font-size: 32px;
+  }
+  #chatGroup li .lf span {
+    font-size: 32px;
+  }
+  #chatGroup li .rt span {
+    font-size: 28px;
+  }
+  #chatGroup li button {
+    font-size: 35px;
+    color: #fff;
+    cursor: pointer;
+    background: red;
+  }
+  strong {
+      font-size: 35px;
+      color: #fff;
+      cursor: pointer;
+      background: #000;
+  }
+</style>

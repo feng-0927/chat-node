@@ -1,0 +1,34 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^3.4.1",
+    "captchapng": "^0.0.1",
+    "connect-multiparty": "^2.2.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "node-mysql-promise": "^0.0.7",
+    "open": "^6.4.0",
+    "opn": "^6.0.0",
+    "socket.io": "~0.9.16",
+    "xtemplate": "^5.0.10",
+    "xtpl": "^3.4.2",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemailer-wellknown": "^0.2.3"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}

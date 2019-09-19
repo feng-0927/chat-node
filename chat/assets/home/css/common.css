@@ -1,0 +1,125 @@
+.nav{ background:#fff}
+.nav li{ height:100px; border-bottom:1px #dfdfdf solid; cursor:pointer}
+#dowebok { background-color: #fff; display:none}
+.block{ display:block !important;}
+#dowebok .nav {list-style-type: none; }
+#dowebok .nav button{ width:80%; height:80px; background:#FD4C5B; border:none; border-radius:50px; color:#fff; font-size:35px; outline:none}
+#dowebok .nav a { display: block; line-height:100px; padding: 0 20px; text-align:center; color: #333333; font-size:40px; text-decoration: none;}
+/************消息*****************/
+.news{}
+.news ul{height: 100%;}
+.news ul li{ height:100px; border-bottom:1px #dfdfdf solid; padding:0px 20px;}
+a{ color: #000; }
+.news ul li .lf{ float:left; position:relative;}
+.news ul li .lf img{ display:block;width:60px; height:60px; border-radius:100%; border:4px #fff solid; margin-top:12px; float:left}
+.news ul li .lf h1{ float:left; line-height:100px; font-size:30px; padding-left:30px}
+.news ul li .lf span{ position:absolute; left:47px; top:12px; background:#FD4C5B; color:#fff; width:25px; height:25px; text-align:center; line-height:25px; border-radius:100%;}
+.news ul li .rt{ float:right; padding-top:40px}
+.news ul li .rt span{ font-size:25px;}
+
+
+/************好友*****************/
+.group{}
+.group ul{ display:none}
+.group .group_tit{ height:100px;  padding:0px 20px; line-height:100px; background:url("/home/img/70 Basic Icons-all-59.svg") 25px 29px no-repeat }
+.group .group_tit{border-bottom:1px #dfdfdf solid;}
+.group .group_tit h1{font-size:30px; padding-left:60px}
+.cheg ul{ display:block !important}
+.cheg .group_tit{background:url("/home/img/70 Basic Icons-all-60.svg") 25px 29px no-repeat !important}
+
+
+/************空间*****************/
+.space{}
+.space ul{}
+.space li{ background:#fff; border-bottom:none !important; height:auto !important; padding-bottom:50px !important; margin-bottom:30px !important
+
+
+}
+.space .lf{}
+.space .rt{}
+.space .say{ padding:0px 10px; color:#2D2D2D; font-size:32px; line-height:38px; text-indent:40px}
+.space .carry{ height:80px; line-height:80px; margin-top:30px; border-bottom:1px #dfdfdf solid;}
+.space .carry .carry_lf{ font-size:30px; color:#8A8A8A; float:left}
+.space .carry .carry_rt{ float:right}
+.space .carry .carry_rt span{ display:inline-block; width:42px; height:40px; margin-right:60px; margin-top:20px}
+.comment{ padding:20px 0px}
+.comment .zan{padding: 10px;}
+.comment .zan h1{ color:#3773A7; font-size:30px; background:url("/home/img/a7.jpg") 0px 0px no-repeat; padding-left:60px; line-height:38px; font-weight:normal}
+.comment .zan h1 span{}
+.comment h2{ color:#2D2D2D;line-height:50px; font-weight:normal;font-size:30px;}
+.comment h2 span{color:#3773A7;font-weight:normal;font-size:30px;}
+.inpt{ text-align:center}
+.inpt input{ width:80%; padding:0px 5%; height:60px; line-height:50px; font-size:30px; border-radius:10px; border:1px #dfdfdf solid; outline:none;}
+
+/************写说说*****************/
+.say_say{ padding:40px}
+.say_say h3{ height:120px; line-height:120px; font-size:35px}
+.say_say textarea{ width:90%; padding:5%; border:1px #dfdfdf solid; font-size:30px; border:1px #dfdfdf solid; border-radius:10px; outline:none}
+
+.btn{ text-align:center;}
+.btn button{ width:300px; height:100px; background:#FD4C5B; border:none; border-radius:10px; color:#fff; font-size:25px; margin:10px;outline:none; }
+
+.menu .swiper-slide a{
+  display: inline-block;
+  color:white;
+  width:100%;
+  height:100%;
+  line-height:120px;
+  text-align:center;
+  font-size:40px;
+}
+
+.mescroll-downwarp .downwarp-tip {
+  font-size: 30px;
+}
+
+.mescroll{
+  position: fixed;
+  bottom: 0;
+  height: auto; /*如设置bottom:50px,则需height:auto才能生效*/
+}
+
+/* 说说 */
+#piclist {
+  padding: 40px;
+  overflow: hidden;
+}
+
+#piclist li {
+  width: 30%;
+  float: left;
+  margin: 10px 0 0 10px;
+  height: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carry_rt a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbup {
+  background-size: 100% 100%;
+}
+
+#pic-bg {
+  background-color: rgba(0,0,0,.7);
+  display:none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#pic-show {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 80%;
+  display: none;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>注册界面</title>
+  <link rel="stylesheet" type="text/css" href="/home/css/index.css">
+</head>
+<body>
+<div class="blackbox"></div>
+<div class="topbox">
+	<div class="topmain">
+    <a onclick="javascript:history.back(-1);">
+      <img src="/home/img/back.png">
+    </a>
+		<h1>账号登录</h1>
+		<div class="top_menu">
+      <span onclick="location.href='/user/register';">
+        <img src="/home/img/menu.png">
+      </span>
+			<i></i>
+		</div>
+	</div>
+</div>
+
+<div class="conbox">
+	<div class="conmain login">
+		<div class="logo">
+        <a href="javasciprt:void(0)">
+          <img src="/home/img/logo_touming.gif">
+        </a>
+    	</div>
+    	<form method="post">
+        <div>
+          <input type="text" placeholder="请输入用户名" name="username" required />
+        </div>
+        <div>
+          <input type="password" placeholder="请输入您的密码" name="password" required />
+        </div>
+    		<div class="win_yzm">
+          <input type="text" placeholder="请输入验证码" name="imgcode" required />
+          <label><img src="/imgcode" onclick="this.src='/imgcode?random='+Math.random()" ;></label>
+    		</div>
+    		<button>登 录</button>
+    	</form>
+    	<div class="logintxt">
+    		<span><a href="/user/password">忘记密码？</a></span>
+    		<span><a href="/user/register">没有账号？免费注册！</a></span>
+    	</div>
+	</div>
+</div>
+
+</body>
+</html>

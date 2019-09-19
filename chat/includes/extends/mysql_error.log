@@ -1,0 +1,133 @@
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:06] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:07] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-21 15:07] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desc' at line 1
+[2019-08-22 09:53] SQL错误：Unknown column 'admin' in 'where clause'
+[2019-08-25 21:07] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-25 21:12] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-25 21:13] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-25 21:14] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-25 21:15] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-25 21:17] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM pre_admin AS admin WHERE id IN(7)' at line 1
+[2019-08-25 21:17] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM pre_admin AS admin WHERE id IN(7)' at line 1
+[2019-08-25 21:34] SQL错误：Unknown column 'thumd' in 'field list'
+[2019-08-25 17:09] SQL错误：Column count doesn't match value count at row 1
+[2019-08-26 01:10] SQL错误：Column count doesn't match value count at row 1
+[2019-08-25 17:53] SQL错误：Unknown column 'thumb' in 'field list'
+[2019-08-26 11:09] SQL错误：Unknown column 'flag' in 'where clause'
+[2019-08-26 11:10] SQL错误：Unknown column 'flag' in 'where clause'
+[2019-08-26 11:10] SQL错误：Unknown column 'flag' in 'where clause'
+[2019-08-26 11:16] SQL错误：Unknown column 'flag' in 'where clause'
+[2019-08-26 15:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY id desc' at line 1
+[2019-08-26 15:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY id desc' at line 1
+[2019-08-26 15:43] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY id desc' at line 1
+[2019-08-26 19:18] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:18] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:20] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:34] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:34] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:36] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:37] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:37] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 19:48] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+[2019-08-26 16:11] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:11] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:12] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:12] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:12] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:12] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:12] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:13] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:13] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:13] SQL错误：Column 'id' in field list is ambiguous
+[2019-08-27 00:18] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:18] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:18] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:18] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:28] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:28] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:30] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:30] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:31] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:31] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:31] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:32] SQL错误：Column 'id' in order clause is ambiguous
+[2019-08-27 00:32] SQL错误：Column 'id' in where clause is ambiguous
+[2019-08-27 00:54] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:55] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:55] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:56] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:56] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:56] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:57] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 00:57] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:41] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:41] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 12:51] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 13:18] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 13:20] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 14:38] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 14:38] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 14:38] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 22:45] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 22:46] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY id desc' at line 1
+[2019-08-27 16:39] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:40] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:41] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:42] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:43] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:45] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:47] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:52] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:52] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-27 16:52] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 0,20' at line 1
+[2019-08-28 15:07] SQL错误：Unknown column 'register_time' in 'field list'
+[2019-08-28 15:30] SQL错误：Unknown column 'copy' in 'where clause'
+[2019-08-28 15:30] SQL错误：Unknown column 'copy' in 'where clause'
+[2019-08-28 15:30] SQL错误：Unknown column 'copy' in 'where clause'
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:23] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:24] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:27] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:27] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-28 19:28] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-08-29 09:14] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,1' at line 1
+[2019-09-02 20:50] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+[2019-09-02 20:51] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+[2019-09-02 20:51] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+[2019-09-02 20:51] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+[2019-09-02 20:52] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE id = 1' at line 1
+[2019-09-02 17:35] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[2019-09-02 17:35] SQL错误：Unknown column 'copy' in 'field list'
+[2019-09-02 17:37] SQL错误：Unknown column 'copy' in 'field list'
+[2019-09-02 17:43] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`valuess`='武侠仙侠,言情,奇幻玄幻,都市娱乐' WHERE name = 'keywords' at line 1
+[2019-09-02 17:45] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`valuess`='小说网' WHERE name = 'webname'' at line 1
+[2019-09-02 17:50] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`valuess`='武侠仙侠,言情,奇幻玄幻,都市娱乐' WHERE name = 'keywords' at line 1
+[2019-09-03 19:12] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE chapter.bookid=1 LIMIT 0,2' at line 1
+[2019-09-03 19:13] SQL错误：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE chapter.bookid='1' LIMIT 0,2' at line 1

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>与{{friend.username}}好友对话</title>
+  <link rel="stylesheet" type="text/css" href="/home/css/css.css">
+  <link rel="stylesheet" href="/home/css/info.css" />
+  <meta name="viewport" content="width=750,target-densitydpi=340,user-scalable=no">
+	<script src="/home/js/jquery-1.8.3.js"></script>
+  <script>
+    $("html").css("font-size", 20 * ($(window).width() / 640) + 'px');
+
+  </script>
+  <style>
+    .nav_data{
+      position: fixed;
+      z-index:11;
+      top:0px;
+    }
+
+    html{
+      overflow: hidden;
+    }
+
+    #container{
+      height:53rem;
+      overflow: scroll;
+      margin-top:100px;
+    }
+    .content{
+      padding-bottom: 15%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav_data">
+  <div class="left" onclick="history.go(-1)">返回</div>
+  <div class="username" style="text-align:center;">与{{friend.username}}好友对话</div>
+</div>
+
+<div id="container">
+    <ul id="content" class="content">
+      {{#each(chatlist)}}
+        <li>
+          {{#if(this.toid === user.userid)}}
+            <!-- 发送方 -->
+            {{#if(!user.avatar)}}
+            <img src='/home/img/a1.png' class="imgright" />
+            {{else}}
+              <img src='{{user.avatar}}' class="imgright" />
+            {{/if}}
+            <span class="spanright">{{this.content}}</span>
+            <i class="iright">{{this.status==='1' ? "已读" : "未读"}}</i>
+          {{else}}
+            <!-- 接收方 -->
+            {{#if(!friend.avatar)}}
+            <img src='/home/img/a1.png' class="imgleft" />
+            {{else}}
+            <img src='{{friend.avatar}}' class="imgleft" />
+            {{/if}}
+            <span class="spanleft">{{this.content}}</span>
+            <i class="ileft">{{this.status==='1' ? "已读" : "未读"}}</i>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+</div>
+
+
+<div class="foot-lt w100 clearfloat" index="0">
+    <div class="inputBox clearfloat">
+        <div class="inputVal" id="text" contenteditable="true"></div>
+        <span id="btn">发送</span>
+    </div>
+</div>
+</body>
+</html>
+<script src="/home/js/socket.io.min.js"></script>
+<script>
+  //设置聊天内容到最底
+  document.getElementById("container").scrollTop = document.getElementById("container").scrollHeight;
+
+  //连接socket
+  var ws = io.connect("http://localhost:3000");
+
+  ws.on('connect', function () {
+    ws.emit('join', `{{user.username}}`);
+  });
+
+  ws.on('notice',function(obj){
+    addMessage(obj.fromAvatar,obj.content,"left");
+  });
+
+  //other right 自己 如果是left 那就是被人
+  var addMessage = function(from,msg,other="right")
+  {
+    var element = document.createElement("li");
+    var content = `
+      <img src='${from}' class="img${other}" />
+      <span class="span${other}">${msg}</span>
+    `;
+    $(element).append(content);
+    document.getElementById("content").appendChild(element);
+
+    document.getElementById("container").scrollTop = document.getElementById("container").scrollHeight;
+
+
+  }
+
+  document.getElementById("btn").addEventListener("click",function(){
+    var text = $("#text").text();
+    if(text.trim().length <= 0)
+    {
+      alert('发送的内容不能为空');
+      return false;
+    }
+
+    addMessage("{{user.avatar}}",text);
+    
+    $("#text").text("");
+    $("#text").focus();
+
+    var obj = {
+      fromid: '{{friend.id}}',
+      toid: '{{user.userid}}',
+      content: text,
+      fromUser: "{{user.username}}",
+      fromAvatar: "{{user.avatar}}",
+      toUser: "{{friend.username}}"
+    }
+
+    ws.emit('message',obj);
+  });
+  var data = {
+    fromid: '{{friend.id}}',
+      toid: '{{user.userid}}',
+      content: text,
+      fromUser: "{{user.username}}",
+      fromAvatar: "{{user.avatar}}",
+      toUser: "{{friend.username}}"
+  }
+  ws.emit('up',obj);
+</script>

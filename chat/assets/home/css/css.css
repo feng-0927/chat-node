@@ -1,0 +1,160 @@
+* {
+	padding:0px;
+	margin:0px;
+}
+ul {
+	list-style:none;
+}
+body {
+	font-size:1rem;
+	font-family:'Microsoft Yahei';
+	-ms-text-size-adjust:100%;
+	-webkit-tap-highlight-color:transparent;
+	box-sizing:border-box;
+}
+img {
+	display:block;
+}
+a {
+	text-decoration:none!important;
+	color:#242424;
+}
+input {
+	-webkit-appearance:none;
+	display:block;
+	border:0.1rem solid #c9c9c9;
+	font-size:1rem;
+}
+i {
+	font-style:normal;
+}
+h1,h2,h3 {
+	font-weight:normal;
+	padding:0px;
+	margin:0px;
+}
+.clearfloat:after {
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+}
+.clearfloat {
+	zoom:1
+}
+.w100 {
+	width:100%;
+}
+#container {
+	width:100%;
+	position:relative;
+}
+#user_face_icon {
+	display:inline-block;
+	background:red;
+	width:60px;
+	height:60px;
+	border-radius:30px;
+	position:absolute;
+	bottom:6px;
+	left:14px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.content img {
+	width:4rem;
+	height:4rem;
+}
+.content {
+	font-size:1.4rem;
+	width:98%;
+	overflow:auto;
+	padding:1%;
+}
+.content li {
+	margin-top:10px;
+	width:100%;
+	display:block;
+	clear:both;
+	overflow:hidden;
+}
+.content li img {
+	float:left;
+}
+.content li span {
+	padding:0.5rem;
+	border-radius:0.6rem;
+	float:left;
+	max-width:21rem;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+.content li i {
+	font-size:1rem;
+	margin-top:1.2rem;
+	margin-right:0.6rem;
+	color:#FD4C5B;
+}
+.content li img.imgleft {
+	float:left;
+}
+.content li img.imgright {
+	float:right;
+}
+.content li i.ileft {
+	float:left;
+}
+.content li i.iright {
+	float:right;
+}
+.content li span.spanleft {
+	float:left;
+	background:#fff;
+	margin:0.5rem 0.5rem 0 0.5rem;
+	color:#FD4C5B;
+	border:0.1rem solid #FD4C5B;
+}
+.content li span.spanright {
+	float:right;
+	background:#FD4C5B;
+	margin:0.5rem 0.5rem 0 0;
+	color:#fff;
+}
+.foot-lt {
+	position:fixed;
+	bottom:0rem;
+	background:#fff;
+}
+.foot-lt .inputBox {
+	width:94%;
+	padding:1rem 1rem;
+	position:relative;
+}
+.foot-lt .inputBox .inputVal {
+	float:left;
+	line-height:2rem;
+	width:73%;
+	padding:0 1rem;
+	font-size:1.2rem;
+	border-bottom:0.1rem solid #ccc;
+	min-height:2.4rem;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+.foot-lt .inputBox span {
+	float:left;
+	display:block;
+	width:5rem;
+	line-height:2.4rem;
+	text-align:center;
+	font-size:1.4rem;
+	border:0.1rem solid #d6d6d6;
+	border-radius:0.4rem;
+	color:#fff;
+	position:absolute;
+	right:1rem;
+	bottom:1rem;
+	background:#FD4C5B;
+	border:0.1rem solid #FD4C5B;
+}

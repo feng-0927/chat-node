@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750,target-densitydpi=340,user-scalable=no">
+    <title>主页</title>
+    <link rel="stylesheet" href="/home/css/public.css">
+    <link rel="stylesheet" href="/home/css/swiper.css">
+    <link rel="stylesheet" href="/home/css/common.css">
+    <script src="/home/js/jquery-1.8.3.js"></script>
+    <script src="/home/js/swiper.js"></script>
+  </head>
+<body id="body_bg">
+	<div class="homepage">
+      <!-- 导航头像 -->
+      <div class="set" id="toggle-sidebar" style="width: 136.364px; float:left">
+        {{#if( !user.avatar )}}
+        <img src="/home/img/a1.png" />
+        {{else}}
+        <img src="{{user.avatar}}" />
+        {{/if}}
+      </div>
+
+      <div class="swiper-container  ws0701_tab_top" id="swiper-container2" style="background:#FD4C5B; position:fixed;top:0px; right:0px; width:100%; z-index:10;">
+        <!--------------功能列表-------------->
+        <div class="menu swiper-wrapper" style="float:right; width:80%;">
+            <div class="swiper-slide active-nav" style="width: 136.364px;" id="noticeNav" style="width: 136.364px;">
+                <a href="/user/index">
+                  消息
+                  <span id="notice">...</span>
+                </a>
+            </div>
+            <div class="swiper-slide" style="width: 136.364px;">
+                <a href="/user/groupList">好友</a>
+            </div>
+            <div class="swiper-slide" style="width: 136.364px;">
+                <a href="/user/space">空间</a>
+            </div>
+            <div class="swiper-slide" style="width: 136.364px;">
+                <a href="/user/say">写说说</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="ws0701_container" style="margin-top:120px;">
+        <div class="swiper-container" id="swiper-container3" style="width:100%;">
+          <div class="swiper-wrapper" style="height: 100%; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+              <!-- 中间不同的内容 -->
+              {{{block ("body")}}}
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <!------------侧边栏导航------------------------>
+  <div id="dowebok">
+      <ul class="nav">
+        <li class="nav_li" >
+          {{#if( !user.avatar )}}
+            <img src="/home/img/a1.png" style=" display:block;margin:auto" />
+          {{else}}
+            <img src="{{user.avatar}}" style=" display:block;margin:auto" />
+          {{/if}}
+            <p class="nickname">{{user.username}}</p>
+            <p class="mood">欢迎{{user.username}}回来！</p>
+        </li>
+        <li>
+          <a href="/user/info" style="background:url('/home/img/70 Basic Icons-all-05.svg') 75px 30px no-repeat;">个人资料</a>
+        </li>
+        <li>
+          <a href="/user/groupAdd" style="background:url('/home/img/70 Basic Icons-all-63.svg') 75px 30px no-repeat">添加分组</a>
+        </li>
+        <li>
+          <a href="/user/friendAdd" style="background:url('/home/img/70 Basic Icons-all-63.svg') 75px 30px no-repeat">添加好友</a>
+        </li>
+        <li>
+          <a href="/user/friendnew" style="background:url('/home/img/70 Basic Icons-all-63.svg') 75px 30px no-repeat">新好友</a>
+        </li>
+        <li style=" padding-top:10px; height:90px; text-align:center">
+          <button onclick="location.href='/user/logout';">退出登陆</button>
+        </li>
+      </ul>
+  </div>
+<script src="/home/js/simpler-sidebar.min.js"></script>
+<script src="/home/js/common.js"></script>
+</body>
+</html>
+<script src="/home/js/socket.io.min.js"></script>
+<script>
+  var ws = io.connect("http://localhost:3000");
+
+  ws.on('connect',function(){
+    ws.emit('join',`{{user.username}}`);
+  });
+
+  ws.on('notice',function(obj){
+    $("#notice").css("opacity",1);
+    var chatlist = $("#chatGroup li");
+    var appendCheck = true;//添加的
+    chatlist.each(function(key,item){
+      if(item.dataset.id == obj.fromid)
+      {
+        //说明这个人的信息已经存在了
+        appendCheck = false;
+      }
+    });
+
+    if(appendCheck)
+    {
+      var str = `<li><a href='/user/groupChat?friend=${obj.fromid}'>
+        <div class="lf">
+          <img src="${obj.fromAvatar}" />
+          <h1>${obj.fromUser}</h1>
+          <span>1</span>
+        </div>
+        <div class="rt">
+          <span>${obj.createtime}</span>
+        </div>
+      </a></li>`;
+      $("#chatGroup").append(str);
+    }
+  })
+</script>

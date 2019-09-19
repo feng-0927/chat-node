@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <title>注册界面</title>
+  <link rel="stylesheet" type="text/css" href="/home/css/index.css">
+</head>
+<body>
+<div class="blackbox"></div>
+<div class="topbox">
+	<div class="topmain">
+    <a href="/user/login">
+      <img src="/home/img/back.png">
+    </a>
+		<h1>免费注册</h1>
+	</div>
+</div>
+
+<div class="conbox">
+	<div class="conmain register">
+		<h2>温馨提示：以下所有为必填项</h2>
+    	<form method="post">
+    		<div>
+    			<input type="text" placeholder="请输入用户名" name="username" required />
+    		</div>
+    		<div>
+    			<input type="password" placeholder="请输入您的密码" name="password" required/>
+    		</div>
+    		<div class="win_yzm">
+          <input type="text" placeholder="请输入验证码" name="imgcode" required />
+          <label><img src="/imgcode" onclick="this.src='/imgcode?random='+Math.random()";></label>
+    		</div>
+    		<p>
+          <a href="register.html#">《网站服务协议》</a>
+        </p>
+    		<button>同意以上协议并注册</button>
+    	</form>
+	</div>
+</div>
+
+</body>
+</html>

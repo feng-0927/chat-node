@@ -1,0 +1,271 @@
+{{extend ('./layout.html')}}
+
+{{#block ("body")}}
+    <!--------------空间-------------->
+    <div id="space" class="swiper-slide" style="width: 750px;height:100vh;overflow:auto; background:#ECECEC">
+        <div class="space news">
+            <ul>
+                {{#each(spacelist, "value", "key")}}
+                <li class="space-con{{value.id}}">
+                    <div class="lf">
+                        {{#if(value.avatar)}}
+                            <img src="{{value.avatar}}" />
+                        {{else}}
+                            <img src="/home/img/a1.png" />
+                        {{/if}}
+                        <h1>{{value.username}}</h1>
+                    </div>
+                    <div class="rt">
+                        <span>{{value.create_time}}</span>
+                    </div>
+                    <div style="clear:both"></div>
+                    <p class="say">{{value.content}}</p>
+                    <ul id="piclist">
+                        {{#each(value.pics)}}
+                            <li style="padding:0!important;margin-bottom:0!important;"> 
+                                <img style="width:100%;" src="{{this}}" alt="">
+                            </li>
+                        {{/each}}
+                    </ul>
+                    </p>
+                    <div class="carry">
+                        <div class="carry_lf">共浏览{{value.count}}次</div>
+                        <div class="carry_rt">
+                            {{#if(value.isThumbup)}}
+                                <span><a class="thumbup" data-id="{{value.id}}" href="javascript:;" style="background-image:url('/home/img/a7.jpg');"></a></span>
+                            {{else}}
+                                <span><a class="thumbup" data-id="{{value.id}}" href="javascript:;" style="background-image:url('/home/img/a5.jpg');"></a></span>
+                            {{/if}}
+                            <span><a class="forward" data-id="{{value.id}}" data-userid="{{value.userid}}" style="background:url('/home/img/a6.jpg')"></a></span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="comment">
+                        <div class="zan">
+                            <h1>
+                                {{#each(thumbupUsers, "user", "index")}}
+                                    {{#each(value.thumbup)}}
+                                        {{#if(this === user.id)}}
+                                            <span class="zanid{{user.id}}">{{user.username}}、</span>
+                                        {{/if}}
+                                    {{/each}}
+                                {{/each}}
+                            </h1>
+                        </div>
+                        {{#each(commentlist, 'item', 'key')}}
+                            {{#if(item.postid === value.id)}}
+                                {{#if(item.parentid === 0)}}
+                                    <h2 class="commenttext{{item.id}}">
+                                        {{item.deepStr}}
+                                        <span class="addDeep" data-post={{value.id}} data-deep="{{item.deep}}" data-parent="{{item.id}}">{{item.username}}:</span>
+                                        {{item.content}}
+                                    </h2>
+                                {{/if}}
+
+                                {{#each(commentlist)}}
+                                    {{#if(this.parentid === item.id)}}
+                                        <h2 class="commenttext{{this.id}}">
+                                            {{this.deepStr}}
+                                            <span class="addDeep" data-post={{value.id}} data-deep="{{this.deep}}" data-parent="{{this.parentid}}">{{this.username}}:</span>
+                                            {{this.content}}
+                                        </h2>
+                                    {{/if}}
+                                {{/each}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                    <div class="inpt">
+                        <input type="text" class="comment_input comment_input{{value.id}}" data-post="{{value.id}}" data-deep="" data-parent="0" />
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div id="pic-bg"></div>
+    <img id="pic-show" src="" alt="">
+{{/block}}
+<script>
+    /*
+        处理点赞用户分隔符
+        @param boolean other 需要被处理的分隔符 true:第一个  false:最后一个  
+    */
+    function zanSplit(other = false) {
+        var zan = $(".zan h1");
+
+        //去掉最后的分隔符
+        for(var i = 0; i < zan.length; i++) {
+            var span = $(zan[i]).children("span");
+            var el = other ? span.first() : span.last();
+
+            if(el.length > 0) {
+                var text = $(el).html();
+                $(el).html(text.replace("、", ""));
+            }
+        }
+    }
+    zanSplit();
+
+    //图片放大
+    $("#piclist img").click(function(e) {
+        //阻止冒泡
+        e.stopPropagation();
+
+        $("#pic-bg").css("display", "block");
+        $("#pic-show").css("display", "block");
+        $("#pic-show")[0].src = this.src;
+    });
+    
+    //取消图片放大
+    $(window).click(function(e) {
+        //阻止冒泡
+        e.stopPropagation();
+
+        if(e.target != $("#pic-show")[0]) {
+            $("#pic-bg").css("display", "none");
+            $("#pic-show").css("display", "none");
+        }
+    })
+    
+    var self;
+    //评论层级    给动态元素绑定点击事件
+    $(".comment").on("click", ".addDeep", function() {
+        self = this;
+        var postid = this.dataset.post;
+        $(`.comment_input${postid}`)[0].dataset.deep = parseInt(this.dataset.deep);
+        $(`.comment_input${postid}`)[0].dataset.parent = this.dataset.parent;
+        $(`.comment_input${postid}`).focus();
+    });
+
+    //评论
+    $(".comment_input").keyup(function(e) {
+        //回车键 13
+        if(e.keyCode === 13) {
+            var postid = this.dataset.post;
+            var deep = this.dataset.deep ? parseInt(this.dataset.deep) + 1 : 0;
+            var parentid = this.dataset.parent;
+            var content = e.target.value.trim();
+
+            if(content == '') {
+                return false;
+            }
+
+            var data = {
+                content,
+                postid,
+                deep,
+                parentid
+            }
+
+            $.ajax({
+                url: "/user/spaceData",
+                type: "POST",
+                data: data,
+                success: res=> {
+                    //追加评论
+                    if(res != "0") {
+                        //添加级别分隔符
+                        var deepStr = "--".repeat(deep);
+
+                        //拼接评论内容
+                        var comm = `<h2 class="commenttext${parentid}">${deepStr}<span class="addDeep" data-post="${postid}" data-deep="${deep}" data-parent="${parentid}">{{user.username}}:</span> ${e.target.value}</h2>`;
+
+                        //找到comment容器
+                        var con = $(e.target.parentNode).siblings(".comment");
+
+                        //根据父级id找到评论
+                        if(parentid == "0") {
+                            con.append(comm);
+                        }else {
+                            //如果有下一层，追加到下一层的最后
+                            var last = $(con).find(`[data-deep='${deep}'][data-parent=${parentid}]`).last()
+                            if(last.length > 0) {
+                                last.parent().after(comm);
+                            }else {
+                                //如果没有找到，那么我就是1楼
+                                last.parent().after(comm);
+                            }
+                        }
+                    }
+
+                    e.target.value = "";
+                }
+            })
+        }
+    });
+
+    //点赞
+    $(".thumbup").click(function() {
+        //帖子id
+        var id = this.dataset.id;
+        var spaceCon = $(".space-con" + id);
+
+        $.ajax({
+            url: `/user/thumbup?id=${id}`,
+            type: "GET",
+            success: res => {
+                if(res == "1") {
+                   //点赞成功
+                   $(this).css({"background-image": "url('/home/img/a7.jpg')"});
+
+                   //点赞列表加上该用户
+                   //假如追加列表里面有用户了， 那么在追加前加个分隔符
+                    var zan = $(spaceCon).find(".zan h1");
+                    zan.append(`<span class="zanid{{user.userid}}">、{{user.username}}</span>`);
+
+                    zanSplit(true);
+                }else if(res == "2") {
+                    //取消点赞
+                    $(this).css("background-image", "url('/home/img/a5.jpg')");
+
+                    var con = $(spaceCon).find(`.zanid{{user.userid}}`);
+
+                    //取消点赞，取消前面用户的分隔符
+                    var prev = $(con).prev();
+                    if(prev.length > 0) {
+                        var text = prev.html();
+                        $(prev).html(text.replace("、", ""));
+                    }
+
+                    //点赞列表去掉该用户
+                    $(con).remove();
+                }
+            }
+        })
+    })
+
+    //函数节流
+    var flag = false;
+
+    //转发
+    $(".forward").click(function() {
+        if(flag) {
+            return false;
+        }
+        flag = true;
+
+        var id = this.dataset.id;
+        var userid = this.dataset.userid;
+
+        if(userid == "{{user.userid}}") {
+            alert("亲，不能转发自己的说说哦!");  flag = false;
+            return false;
+        }
+
+        $.ajax({
+            url: `/user/forward?id=${id}`,
+            type: "GET",
+            success: function(res) {
+                flag = false;
+                if(res == "1") {
+                    alert("转发成功");
+                    window.location = window.location.href;
+                }else {
+                    alert("转发失败，请稍后再试");
+                }
+            }
+        })
+    })
+</script>
+ 

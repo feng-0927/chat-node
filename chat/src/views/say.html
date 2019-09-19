@@ -1,0 +1,68 @@
+{{extend ('./layout.html')}}
+
+{{#block ("body")}} 
+<!--------------写说说-------------->
+<div class="swiper-slide" style="width: 750px;height:900px;overflow:auto">
+    <form method="POST" action="/user/say" enctype="multipart/form-data">
+        <div class="say_say">
+            <h3>有什么新鲜事想要告诉大家?</h3>
+            <textarea name="content" required
+            value="说点什么吧..."
+            onfocus="if(this.value=='说点什么吧...'){this.value=''}"
+            onblur="if(this.value==''){this.value='说点什么吧...';}"
+            >说点什么吧...</textarea>
+        </div>
+        <div class="btn">
+            <button type="button" style="background:#F90" onclick="document.getElementById('pic').click();">上传图片</button>
+            <input name="pic" id="pic" type="file" style="display:none;" multiple="multiple"  />
+            <button type="submit">发表</button>
+        </div>
+    </form>
+
+    <div>
+        <ul id="piclist"></ul>
+    </div>
+</div>
+{{/block}}
+
+<script type="text/javascript">
+    //读取图片追加图集
+    function showPics(f, el) {
+        if(!f || !f.files) {
+            return false;
+        }
+
+        if(f.files.length > 6) {
+            alert("上传图片不应该大于6个");
+            return false;
+        }
+
+        var files = [];
+        var con = document.querySelector(el);
+
+        //清空
+        con.innerHTML = "";
+        //获取file中所有的文件  
+        for(var i = 0; i < f.files.length; i++) {
+            //创建文件读取对象
+            var rd = new FileReader();
+            rd.readAsDataURL(f.files[i]);
+
+            //加载完毕显示在页面上
+            rd.onloadend = function(e) {
+                var li = document.createElement("li");
+                li.style.backgroundImage = `url(${this.result})`;
+                con.appendChild(li);
+            }
+        }
+    }
+   
+    $(function () {
+        $("#pic").change(function() {
+            // 如果value不为空，调用文件加载方法
+            if($(this).val() != ""){
+                showPics(this, "#piclist");
+            }
+        })
+    })
+</script>

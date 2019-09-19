@@ -1,0 +1,26 @@
+{{extend ('./layout.html')}}
+
+{{#block ("body")}}
+<div class="swiper-slide news" style="width:750px;height:900px; overflow:auto">
+    <ul id="chatGroup">
+      {{#each(chatlist)}}
+      <li data-id="{{this.toid}}">
+        <a href="/user/groupChat?friend={{this.toid}}">
+          <div class="lf">
+              {{#if(!this.avatar)}}
+                <img src="/home/img/a1.png" />
+              {{else}}
+                <img src="{{this.avatar}}" />
+              {{/if}}
+              <h1>{{this.username}}</h1>
+              <span>...</span>
+            </div>
+            <div class="rt">
+              <span>{{this.createtime}}</span>
+            </div>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+{{/block}}

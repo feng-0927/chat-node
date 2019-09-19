@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=750,target-densitydpi=340,user-scalable=no">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="/home/css/public.css" />
+    <link rel="stylesheet" href="/home/css/info.css" />
+  </head>
+  <body id="body_bg">
+    <form method="post" enctype="multipart/form-data">
+      <div class="nav_data">
+          <div class="left" onclick="location.href='/user/index'">个人资料</div>
+          <div class="right"><button>保存</button></div>
+      </div>
+      <div class="data_box">
+        <div class="avatar">
+          {{#if( !user.avatar )}}
+            <img src="/home/img/a1.png" onclick="avtar.click()" />
+          {{else}}
+            <img src="{{user.avatar}}" onclick="avtar.click()" />
+          {{/if}}
+          <input type="file" style="display: none" name="avatar" id="avtar" />
+        </div>
+        <ul>
+          <li>
+            密码：
+            <input type="password" name="password" placeholder="请输入密码" />
+          </li>
+          <li>
+            邮箱：
+            <input type="email" name="email" value="{{info.email}}" placeholder="请输入邮箱" required />
+            {{#if(!info.status)}}
+              <button onclick="location.href='/user/email';" class="emailCheck" type="button">邮箱验证</button>
+            {{/if}}
+          </li>
+        </ul>
+      </div>
+    </form>
+  </body>
+</html>
