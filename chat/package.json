@@ -21,7 +21,7 @@
     "node-mysql-promise": "^0.0.7",
     "open": "^6.4.0",
     "opn": "^6.0.0",
-    "socket.io": "~0.9.16",
+    "socket.io": "~2.4.0",
     "xtemplate": "^5.0.10",
     "xtpl": "^3.4.2",
     "nodemailer": "^4.0.1",
